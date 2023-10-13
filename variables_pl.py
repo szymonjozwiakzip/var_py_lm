@@ -114,44 +114,70 @@ print('Wynik działania 23+17 w przypadku w którym mamy do czynienia z typem da
 '''
 KONWERSJA TYPOW DANYCH
  
-1.float -> int         / zostaje tylko czesc calkowita liczby -> 5.7 = 5
-2.bool -> int         /w przypadku prawdy zwroci 1, w przypadku falszu 0 
-3.int -> float       / 5 -> 5.0
-4.string -> int     / tylko jesli string sklada sie z cyfr 
-5.bool -> float    / w przypadku prawdy zwroci 1.0, a w przypadku falszu 0.0
-6.int -> bool     / w przypadku 0 fałsz w kazdym innym mamy prawde
-7.string -> bool / zwraca fałsz jedynie dla pustego stringa, w każdym innym przypadku mamy prawdę
+1.float -> int           / zostaje tylko czesc calkowita liczby -> 5.7 = 5
+2.bool -> int           / w przypadku prawdy zwroci 1, w przypadku falszu 0 
+3.string -> int        / tylko jesli string sklada sie z cyfr 
+4.int -> float        / 5 -> 5.0
+5.bool -> float      / w przypadku prawdy zwroci 1.0, a w przypadku falszu 0.0
+6.string -> float   / tylko wtedy, gdy cały string składa się z cyfr, kropka jest opcjonalna
+7.int -> bool      / w przypadku 0 fałsz w kazdym innym mamy prawde
+8.float -> bool   / w przypadku 0.0 zwraca fałsz, w każdym innym prawdę
+9.string -> bool / zwraca fałsz jedynie dla pustego stringa, w każdym innym przypadku mamy prawdę
 Wszystkie konwersje na string zmieniają po prostu wszystko na napis
 '''
 
 print('KONWERSJA TYPÓW DANYCH - PRZYKŁADY')
 
-print('1. float -> int')
+print('\n1. float -> int')
 a = 3.8 
 print('float:', a)
 a = int(a) #używamy w tym celu funkcji int(), która oczywiście konwertuje wartość w nawiasie na typ int
 print('Po konwersji: ',a, type(a))
 
-#2.
-a = True # bool
-a= int(a) # konwersja na int z bool
-print(a, type(a))
-a = False # bool
-a= int(a) # konwersja z int na bool
-print(a, type(a))
+print('\n2. bool -> int')
+a = True
+print('bool: ', a)
+a= int(a)
+print('Po konwersji: ',a, type(a))
 
-#4
-a = '10' #string czyli napis
-print(a, type(a)) #wypisuje jako napis
-a = int(a) #konwertuje na int
-print(a, type(a)) #wypisuje jako int
+print('\n3. string -> int')
+a = '10'
+print('string: ',a)
+a = int(a)
+print('Po konwersji: ',a, type(a))
 
-#konwersje na float
+print('\n4. int -> float')
+a = 10
+print('int: ', a)
+a = float(a)
+print('Po konwersji: ', a, type(a))
 
-b = 2 # int
-b = float(b) # konwersja na float
-print(b, type(b))
+print('\n5. bool -> float')
+a = False
+print('bool: ', a)
+a = float(a)
+print('Po konwersji: ', a, type(a))
 
-b = True
-b = float(b)
-print(b, type(b))
+print('\n6. string -> float')
+a = '7'
+print('strong: ', a)
+a = float(a)
+print('Po konwersji: ', a, type(a))
+
+print('\n7. int -> bool')
+a = 5
+print('int: ', a)
+a = float(a)
+print('Po konwersji: ',a, type(a))
+
+print('\n8. float -> bool')
+a= 0.0
+print ('float: ', a)
+a = bool(a)
+print('Po konwersji: ', a, type(a))
+
+print('\n9. string -> bool')
+a= 'test'
+print('string: ', a)
+a = bool(a)
+print('Po konwersji: ', a, type(a))
